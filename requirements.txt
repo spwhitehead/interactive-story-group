@@ -1,1 +1,4 @@
-pyChatGPT
+pip install openai
+
+import openai
+
