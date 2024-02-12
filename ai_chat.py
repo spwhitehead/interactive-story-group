@@ -1,7 +1,8 @@
 import openai
 
 # Your OpenAI API key
-openai.api_key = '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'
+with open("API-Key.txt", "r") as file:
+    api_key = file.read().strip()
 
 
 def chat_with_gpt(prompt):

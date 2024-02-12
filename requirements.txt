@@ -2,3 +2,8 @@ pip install openai
 
 import openai
 
+# To make this work, you will need an OpenAI API key. 
+# Follow the instructions here to get one: https://platform.openai.com/docs/quickstart?context=python
+# Then, create a .txt file with your API key and put it in the same directory as this notebook.
+# The file should be called "openai-api-key.txt" and contain only your API key.
+# Then, change the file name in the ai_chat.py file to "openai-api-key.txt"
