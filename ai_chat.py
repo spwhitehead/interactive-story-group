@@ -1,8 +1,7 @@
 import openai
 
 # Your OpenAI API key
-with open("API-Key.txt", "r") as file:
-    api_key = file.read().strip()
+openai.api_key_path = "/Users/spencerwhitehead/Desktop/Code/Assignments/interactive-story-group/API-Key.txt"
 
 
 def chat_with_gpt(prompt):
@@ -11,7 +10,7 @@ def chat_with_gpt(prompt):
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",  # Specify the model you want to use
             messages=[
-                {"role": "system", "content": "You are a story teller who tells what would happen if whatever the user tells you didn't actually happen."},
+                {"role": "system", "content": "accept a simple story about something from a user, then give a hypothetical story in return as if the opposite in the story had happened. For example, if someone says 'I sold my favorite car in college' you could return a hypothetical short story about what would have happened if they had kept the car. The story should be 3-5 sentences long."},
                 {"role": "user", "content": prompt},
             ]
         )
