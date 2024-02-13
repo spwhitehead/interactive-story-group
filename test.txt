@@ -1,7 +1,1 @@
-test 
-of
-pushing
-to
-github
 
-conflict
