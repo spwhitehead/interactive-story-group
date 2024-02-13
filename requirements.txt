@@ -1,6 +1,6 @@
-pip install openai
+pip install OpenAI
 
-import openai
+from openai import OpenAI
 
 # To make this work, you will need an OpenAI API key. 
 # Follow the instructions here to get one: https://platform.openai.com/docs/quickstart?context=python

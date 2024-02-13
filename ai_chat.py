@@ -1,25 +1,44 @@
-import openai
+from openai import OpenAI
 
-# Your OpenAI API key
-openai.api_key_path = "/Users/spencerwhitehead/Desktop/Code/Assignments/interactive-story-group/API-Key.txt"
+client = OpenAI(api_key=input("Enter your OpenAI API key: "))
 
-
-def chat_with_gpt(prompt):
-    try:
-        # Making a request to the OpenAI API
-        response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",  # Specify the model you want to use
-            messages=[
-                {"role": "system", "content": "accept a simple story about something from a user, then give a hypothetical story in return as if the opposite in the story had happened. For example, if someone says 'I sold my favorite car in college' you could return a hypothetical short story about what would have happened if they had kept the car. The story should be 3-5 sentences long."},
-                {"role": "user", "content": prompt},
-            ]
-        )
-        return response.choices[0].message['content'].strip()
-    except Exception as e:
-        return str(e)
+# Function to interact with ChatGPT and play the DND game
 
 
-# Example usage
-user_input = input("Say something to ChatGPT: ")
-response = chat_with_gpt(user_input)
-print("ChatGPT:", response)
+def play_dnd_game():
+    initial_game_prompt = # Add initial game prompt here
+    print("") # Welcome message to the user
+    print()
+    print(initial_game_prompt)
+    print()
+    game_history = [
+        {"role": "system", "content": "asdfasdf"}, # Initial instructions for the AI
+        {"role": "user", "content": initial_game_prompt}
+    ]
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == 'quit':
+            print("Goodbye! Thanks for playing.")
+            break
+        else:
+            game_history.append({"role": "user", "content": user_input})
+            try:
+                response = client.chat.completions.create(
+                    model="gpt-3.5-turbo", messages=game_history)
+
+                game_response = response.choices[0].message.content.strip()
+                print("Game Master:", game_response)
+                game_history.append(
+                    {"role": "assistant", "content": game_response})
+            except Exception as e:
+                print(str(e))
+
+# Main function
+
+
+def main():
+    play_dnd_game()
+
+
+if __name__ == "__main__":
+    main()
