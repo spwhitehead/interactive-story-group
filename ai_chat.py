@@ -6,13 +6,14 @@ client = OpenAI(api_key=input("Enter your OpenAI API key: "))
 
 
 def play_dnd_game():
-    initial_game_prompt = # Add initial game prompt here
-    print("") # Welcome message to the user
+    initial_game_prompt = "Sample Message"  # Add initial game prompt here
+    print("")  # Add welcome message to the user
     print()
     print(initial_game_prompt)
     print()
     game_history = [
-        {"role": "system", "content": "asdfasdf"}, # Initial instructions for the AI
+        # Initial instructions for the AI
+        {"role": "system", "content": "asdfasdf"},
         {"role": "user", "content": initial_game_prompt}
     ]
     while True:
