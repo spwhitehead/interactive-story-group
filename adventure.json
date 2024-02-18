@@ -1,167 +1,181 @@
 {
-    "scenes": [
-      {
-        "id": 1,
-        "description": "At the crossroads of destiny, two paths lie before you: The Enchanted Forest to your left, The Forgotten Ruins to your right.",
-        "choices": [
-          {
-            "text": "Take the path to The Enchanted Forest",
-            "leads_to": 2
-          },
-          {
-            "text": "Take the path to The Forgotten Ruins",
-            "leads_to": 6
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "description": "You find yourself in a clearing with two mystical doors carved into the trees and a glowing bucket in the center.",
-        "choices": [
-          {
-            "text": "Open the door to your left",
-            "leads_to": 3
-          },
-          {
-            "text": "Open the door to your right",
-            "leads_to": 4
-          },
-          {
-            "text": "Look in the bucket",
-            "leads_to": 5
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "description": "A grove where whispers fill the air. A spectral figure guards a stone door.",
-        "choices": [
-          {
-            "text": "Use the spell from the tome to appease the guardian",
-            "leads_to": 9
-          },
-          {
-            "text": "Return to the clearing",
-            "leads_to": 2
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "description": "A cavern shimmering with crystals. A crystal door is sealed by magic.",
-        "choices": [
-          {
-            "text": "Use the crystal orb to unlock the door",
-            "leads_to": 10
-          },
-          {
-            "text": "Return to the clearing",
-            "leads_to": 2
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "description": "You find a rusty key in the bucket.",
-        "choices": [
-          {
-            "text": "Take the key and use it on the door to the left",
-            "leads_to": 3
-          },
-          {
-            "text": "Take the key and use it on the door to the right",
-            "leads_to": 4
-          },
-          {
-            "text": "Leave the key and return to the clearing",
-            "leads_to": 2
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "description": "Crumbling gates lead into the ruins. A broken statue holds a small chest.",
-        "choices": [
-          {
-            "text": "Open the door to your left",
-            "leads_to": 7
-          },
-          {
-            "text": "Open the door to your right",
-            "leads_to": 8
-          },
-          {
-            "text": "Examine the broken statue",
-            "leads_to": 11
-          }
-        ]
-      },
-      {
-        "id": 7,
-        "description": "A vast hall with echoes of the past. A heavy iron door stands closed.",
-        "choices": [
-          {
-            "text": "Use the emblem to unlock the iron door",
-            "leads_to": 12
-          },
-          {
-            "text": "Return to the gates",
-            "leads_to": 6
-          }
-        ]
-      },
-      {
-        "id": 8,
-        "description": "A throne room cloaked in shadows. A shadowy door is hidden behind the throne.",
-        "choices": [
-          {
-            "text": "Use the jewel to reveal the true door",
-            "leads_to": 13
-          },
-          {
-            "text": "Return to the gates",
-            "leads_to": 6
-          }
-        ]
-      },
-      {
-        "id": 9,
-        "description": "The spectral guardian vanishes, allowing you to pass. You discover a hidden grove beyond.",
-        "ending": true
-      },
-      {
-        "id": 10,
-        "description": "The crystal door opens, revealing a chamber filled with ancient treasures. Your journey is rewarded.",
-        "ending": true
-      },
-      {
-        "id": 11,
-        "description": "Inside the chest, you find an old, iron key.",
-        "choices": [
-          {
-            "text": "Take the key and open the door to the left",
-            "leads_to": 7
-          },
-          {
-            "text": "Take the key and open the door to the right",
-            "leads_to": 8
-          },
-          {
-            "text": "Leave the key and return to the gates",
-            "leads_to": 6
-          }
-        ]
-      },
-      {
-        "id": 12,
-        "description": "The emblem unlocks the iron door, revealing an ancient library filled with forgotten knowledge.",
-        "ending": true
-      },
-      {
-        "id": 13,
-        "description": "The jewel reveals the true door through the shadows. Behind it lies the ancient throne, crowned with priceless artifacts.",
-        "ending": true
-      }
-    ]
-  }
-  
+  "scenes": [
+    {
+      "id": 1,
+      "description": "At the crossroads of destiny, two paths lie before you: The Enchanted Forest to your left, The Forgotten Ruins to your right.",
+      "choices": [
+        {
+          "text": "Take the path to The Enchanted Forest",
+          "leads_to": 2
+        },
+        {
+          "text": "Take the path to The Forgotten Ruins",
+          "leads_to": 6
+        }
+      ],
+      "characters": []
+    },
+    {
+      "id": 2,
+      "description": "You find yourself in a clearing with two mystical doors carved into the trees and a glowing bucket in the center.",
+      "choices": [
+        {
+          "text": "Open the door to your left",
+          "leads_to": 3,
+          "required_items": ["key"]
+        },
+        {
+          "text": "Open the door to your right",
+          "leads_to": 4,
+          "required_items": ["key"]
+        },
+        {
+          "text": "Look in the bucket",
+          "leads_to": 5
+        }
+      ],
+      "characters": ["Mystical Deer", "Whispering Trees"]
+    },
+    {
+      "id": 3,
+      "description": "A grove where whispers fill the air. A spectral figure guards a stone door.",
+      "choices": [
+        {
+          "text": "Use the spell from the tome to appease the guardian",
+          "leads_to": 9
+        },
+        {
+          "text": "Return to the clearing",
+          "leads_to": 2
+        }
+      ],
+      "characters": ["Spectral Guardian"]
+    },
+    {
+      "id": 4,
+      "description": "A cavern shimmering with crystals. A crystal door is sealed by magic.",
+      "choices": [
+        {
+          "text": "Use the crystal orb to unlock the door",
+          "leads_to": 10
+        },
+        {
+          "text": "Return to the clearing",
+          "leads_to": 2
+        }
+      ],
+      "characters": ["Crystal Spirits"]
+    },
+    {
+      "id": 5,
+      "description": "You find a rusty key in the bucket.",
+      "choices": [
+        {
+          "text": "Take the key and use it on the door to the left",
+          "leads_to": 3
+        },
+        {
+          "text": "Take the key and use it on the door to the right",
+          "leads_to": 4
+        },
+        {
+          "text": "Leave the key and return to the clearing",
+          "leads_to": 2
+        }
+      ],
+      "characters": []
+    },
+    {
+      "id": 6,
+      "description": "Crumbling gates lead into the ruins. A broken statue holds a small chest.",
+      "choices": [
+        {
+          "text": "Open the door to your left",
+          "leads_to": 7
+        },
+        {
+          "text": "Open the door to your right",
+          "leads_to": 8
+        },
+        {
+          "text": "Examine the broken statue",
+          "leads_to": 11
+        }
+      ],
+      "characters": ["Guardian Statues"]
+    },
+    {
+      "id": 7,
+      "description": "A vast hall with echoes of the past. A heavy iron door stands closed.",
+      "choices": [
+        {
+          "text": "Use the emblem to unlock the iron door",
+          "leads_to": 12
+        },
+        {
+          "text": "Return to the gates",
+          "leads_to": 6
+        }
+      ],
+      "characters": ["Echoing Shadows"]
+    },
+    {
+      "id": 8,
+      "description": "A throne room cloaked in shadows. A shadowy door is hidden behind the throne.",
+      "choices": [
+        {
+          "text": "Use the jewel to reveal the true door",
+          "leads_to": 13
+        },
+        {
+          "text": "Return to the gates",
+          "leads_to": 6
+        }
+      ],
+      "characters": ["Ancient Kings"]
+    },
+    {
+      "id": 9,
+      "description": "The spectral guardian vanishes, allowing you to pass. You discover a hidden grove beyond.",
+      "ending": true,
+      "characters": []
+    },
+    {
+      "id": 10,
+      "description": "The crystal door opens, revealing a chamber filled with ancient treasures. Your journey is rewarded.",
+      "ending": true,
+      "characters": []
+    },
+    {
+      "id": 11,
+      "description": "As you look at the statue, you notice a small chest. Inside the chest, you find an old, iron key.",
+      "choices": [
+        {
+          "text": "Take the key and open the door to the left",
+          "leads_to": 7
+        },
+        {
+          "text": "Take the key and open the door to the right",
+          "leads_to": 8
+        },
+        {
+          "text": "Leave the key and return to the gates",
+          "leads_to": 6
+        }
+      ],
+      "characters": []
+    },
+    {
+      "id": 12,
+      "description": "The emblem unlocks the iron door, revealing an ancient library filled with forgotten knowledge.",
+      "ending": true,
+      "characters": ["Ancient Librarians"]
+    },
+    {
+      "id": 13,
+      "description": "The jewel reveals the true door through the shadows. Behind it lies the ancient throne, crowned with priceless artifacts.",
+      "ending": true,
+      "characters": []
+    }
+  ]
+}
