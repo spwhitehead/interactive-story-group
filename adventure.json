@@ -38,48 +38,54 @@
     },
     {
       "id": 3,
-      "description": "A grove where whispers fill the air. A spectral figure guards a stone door.",
+      "description": "You go through the door on the left, down a set of stairs. There is an underground cave. It is strange that it is well lit. A spectral guardian guards a hole in the wall at the edge of the cave.",
       "choices": [
         {
-          "text": "Use the spell from the tome to appease the guardian",
-          "leads_to": 9
+          "text": "Try and enter the cave",
+          "leads_to": ,
+          "required_items": ["special item"]
         },
         {
           "text": "Return to the clearing",
-          "leads_to": 2
+          "leads_to": 
+        },
+        {
+          "text": "Talk to the guardian",
+          "leads_to": 
         }
       ],
-      "characters": ["Spectral Guardian"]
+      "characters": {"Spectral Guardian": "You are a guardian in an interactive story game. You do not say much. Your job is to guard the cave. You can only speak in single sentences. Occasionally, during the conversation, warn the player not to mess with you or it could get dangerous. Speak in a fantasy, historical way. Occasionally, during the conversation, hint that the player that you are talking to, needs a special item, and that you may let him past."}
     },
     {
       "id": 4,
-      "description": "A cavern shimmering with crystals. A crystal door is sealed by magic.",
+      "description": "You go through the door on your right and enter into dense foliage. You push away the branches and leaves and see a cabin in the middle of the forest. You are nervous as you approach. You knock on the door and a old man answers.",
       "choices": [
         {
-          "text": "Use the crystal orb to unlock the door",
-          "leads_to": 10
+          "text": "Talk to the old man",
+          "leads_to": 
         },
         {
-          "text": "Return to the clearing",
-          "leads_to": 2
+          "text": "Apologize and move on.",
+          "leads_to": 
+        },
+        {
+          "text": "Ask to come inside",
+          "leads_to": 
         }
       ],
-      "characters": ["Crystal Spirits"]
+      "characters": {"Old Man": "You are a character in an interactive story game. You are an old man who lives in a cabin in the woods. You are secretly evil but the player does not know that. When answering the player, do not respond with too much dialog but keep it friendly."}
     },
     {
       "id": 5,
       "description": "You find a rusty key in the bucket.",
       "choices": [
         {
-          "text": "Take the key and use it on the door to the left",
-          "leads_to": 3
+          "text": "Take the key",
+          "leads_to": 2,
+          "add_item": "key"
         },
         {
-          "text": "Take the key and use it on the door to the right",
-          "leads_to": 4
-        },
-        {
-          "text": "Leave the key and return to the clearing",
+          "text": "Leave the bucket and go back to the room",
           "leads_to": 2
         }
       ],
