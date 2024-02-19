@@ -2,3 +2,5 @@ API-Key.txt
 test_ai_chat.py
 .env
 test-ai-game.py
+openai_key.txt
+__pycache__
