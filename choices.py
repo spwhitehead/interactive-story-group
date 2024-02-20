@@ -1,6 +1,6 @@
 import json
 import ai_functions
-import main
+import player
 # Load the adventure JSON data
 
 
@@ -26,13 +26,20 @@ def play_scene(scene):
         print(f"{idx}. {choice['text']}")
     print()
     user_choice = input("What do you choose? ")
+    if user_choice == "Print Items":
+        player.player1.print_items()
     user_choice = int(ai_functions.have_AI_choose(
         scene['choices'], user_choice)) - 1
     if 'add_item' in scene['choices'][user_choice]:
-        main.player1.add_item(scene['choices'][user_choice]['add_item'])
+        player.player1.add_item(scene['choices'][user_choice]['add_item'])
         print()
         ai_functions.print_typing(
             f"You picked up {scene['choices'][user_choice]['add_item']}")
+    if 'required_items' in scene['choices'][user_choice]:
+        if not player.player1.check_items(scene['choices'][user_choice]['required_items']):
+            print()
+            ai_functions.print_typing("You don't have the required items.")
+            play_scene(scene)
     next_scene_id = scene['choices'][user_choice]['leads_to']
     next_scene = next(
         filter(lambda x: x['id'] == next_scene_id, adventure_data['scenes']), None)
