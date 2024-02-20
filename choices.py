@@ -15,25 +15,29 @@ adventure_data = load_adventure_data('adventure.json')
 
 def play_scene(scene):
     previous_scene = adventure_data['scenes'][scene['id'] - 1]
+    print()
     print(ai_functions.have_AI_describe(
         scene['description'], previous_scene['description']))
     if 'ending' in scene and scene['ending']:
         print()
-        print("Thank you for playing.")
+        ai_functions.print_typing("Thank you for playing.")
         return
     for idx, choice in enumerate(scene['choices'], start=1):
         print(f"{idx}. {choice['text']}")
+    print()
     user_choice = input("What do you choose? ")
     user_choice = int(ai_functions.have_AI_choose(
         scene['choices'], user_choice)) - 1
     if 'add_item' in scene['choices'][user_choice]:
         main.player1.add_item(scene['choices'][user_choice]['add_item'])
-        print(f"You picked up {scene['choices'][user_choice]['add_item']}")
+        print()
+        ai_functions.print_typing(
+            f"You picked up {scene['choices'][user_choice]['add_item']}")
     if user_choice == "x":
         ai_functions.have_conversation_with(scene['characters'][0])
         for idx, choice in enumerate(scene['choices'], start=1):
             print(f"{idx}. {choice['text']}")
-        user_choice = input("What do you choose? ")
+        user_choice = ai_functions.print_typing(input("What do you choose? "))
         user_choice = int(ai_functions.have_AI_choose(
             scene['choices'], user_choice)) - 1
     next_scene_id = scene['choices'][user_choice]['leads_to']
@@ -42,7 +46,7 @@ def play_scene(scene):
     if next_scene:
         play_scene(next_scene)
     else:
-        print("Error: Scene not found.")
+        ai_functions.print_typing("Error: Scene not found.")
 
 
 # Load the adventure data

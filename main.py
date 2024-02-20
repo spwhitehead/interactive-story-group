@@ -8,15 +8,17 @@ import json
 def main():
 
     print()
-    print("Hello, and welcome to the adventure game. Good luck. :)")
+    ai_functions.print_typing(
+        "Hello, and welcome to the adventure game. Good luck. :)")
     print()
-    player_name = input("What is your name? ")
+    player_name = ai_functions.print_typing(input("What is your name? "))
     player1 = player.Player(player_name)
 
     # clear the terminal screen here for immersion.
     # color the text for fun
 
     choices.play_scene(choices.initial_scene)
+
 
     # print("You wake up and slowly open your eyes. You see...")
     # ai_functions.have_AI_describe("Describe the first room of the adventure game. It has two doors and a key.")
