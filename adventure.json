@@ -10,7 +10,7 @@
         },
         {
           "text": "Take the path to The Forgotten Ruins",
-          "leads_to": 6
+          "leads_to": 11
         }
       ],
       "characters": []
@@ -41,36 +41,36 @@
       "description": "You go through the door on the left, down a set of stairs. There is an underground cave. It is strange that it is well lit. A spectral guardian guards a hole in the wall at the edge of the cave.",
       "choices": [
         {
-          "text": "Try and enter the cave",
-          "leads_to": 99,
-          "required_items": ["special item"]
+          "text": "Try and go through the hole",
+          "leads_to": 6,
+          "required_items": ["Spectral Amulet"]
         },
         {
           "text": "Return to the clearing",
-          "leads_to": 99 
+          "leads_to": 2
         },
         {
-          "text": "Talk to the guardian",
-          "leads_to": 99 
+          "text": "Look around the room",
+          "leads_to": 7
         }
-      ],
-      "characters": {"Spectral Guardian": "You are a guardian in an interactive story game. You do not say much. Your job is to guard the cave. You can only speak in single sentences. Occasionally, during the conversation, warn the player not to mess with you or it could get dangerous. Speak in a fantasy, historical way. Occasionally, during the conversation, hint that the player that you are talking to, needs a special item, and that you may let him past."}
+      ]    
     },
     {
       "id": 4,
-      "description": "You go through the door on your right and enter into dense foliage. You push away the branches and leaves and see a cabin in the middle of the forest. You are nervous as you approach. You knock on the door and a old man answers.",
+      "description": "You go through the door on your right and enter into dense foliage. You push away the branches and leaves and see a cabin in the middle of the forest. You are nervous as you approach. You knock on the door and an old man answers.",
       "choices": [
         {
           "text": "Talk to the old man",
-          "leads_to": 99 
+          "leads_to": 9
         },
         {
           "text": "Apologize and move on.",
-          "leads_to": 99 
+          "leads_to": 2
         },
         {
           "text": "Ask to come inside",
-          "leads_to": 99 
+          "leads_to": 9,
+          "required_items": ["key"]
         }
       ],
       "characters": {"Old Man": "You are a character in an interactive story game. You are an old man who lives in a cabin in the woods. You are secretly evil but the player does not know that. When answering the player, do not respond with too much dialog but keep it friendly."}
@@ -93,95 +93,93 @@
     },
     {
       "id": 6,
-      "description": "Crumbling gates lead into the ruins. A broken statue holds a small chest.",
+      "description": "You try to go through the hole but the spectral guardian stops you. Confused, you try handing him the Spectral Amulet. He smiles and lets you past. You find yourself in a hidden cavern with a Sword resting on a pedestal.",
       "choices": [
         {
-          "text": "Open the door to your left",
-          "leads_to": 7
+          "text": "Return to the clearing",
+          "leads_to": 2
         },
         {
-          "text": "Open the door to your right",
-          "leads_to": 8
-        },
-        {
-          "text": "Examine the broken statue",
-          "leads_to": 11
+          "text": "Take the Sword",
+          "leads_to": 8,
+          "add_item": "Sword"
         }
-      ],
-      "characters": ["Guardian Statues"]
+      ]
     },
     {
       "id": 7,
-      "description": "A vast hall with echoes of the past. A heavy iron door stands closed.",
+      "description": "You look around the cave and find a hidden amulet on the wall.",
       "choices": [
         {
-          "text": "Use the emblem to unlock the iron door",
-          "leads_to": 12
+          "text": "Take the amulet",
+          "leads_to": 3,
+          "add_item": "Spectral Amulet"
         },
         {
-          "text": "Return to the gates",
-          "leads_to": 6
+          "text": "Return to the clearing",
+          "leads_to": 2
+        },
+        {
+          "text": "Leave the amulet and go back to the room",
+          "leads_to": 3
         }
-      ],
-      "characters": ["Echoing Shadows"]
+      ]
     },
     {
       "id": 8,
-      "description": "A throne room cloaked in shadows. A shadowy door is hidden behind the throne.",
+      "description": "After you take the sword, the spectral guardian appears and attacks you. You use the sword to defend yourself and defeat the guardian. You find a hidden grove beyond filled with riches.",
       "choices": [
         {
-          "text": "Use the jewel to reveal the true door",
-          "leads_to": 13
+          "text": "Sleep for Eternity",
+          "ending": true
         },
         {
-          "text": "Return to the gates",
-          "leads_to": 6
+          "text": "Bask in your riches",
+          "ending": true
+        },
+        {
+          "text": "Go back to the clearing",
+          "leads_to": 2
         }
-      ],
-      "characters": ["Ancient Kings"]
+      ]
     },
     {
       "id": 9,
-      "description": "The spectral guardian vanishes, allowing you to pass. You discover a hidden grove beyond.",
-      "ending": true,
-      "characters": []
+      "description": "The old man tells a story of a mystical amulet that can be found in the forest. He tells you that it is said to be hidden in a cave guarded by a spectral guardian. He also tells you that the guardian can only be defeated by a sword hidden in the same cave.",
+      "choices": [
+        {
+          "text": "Ask for a drink",
+          "leads_to": 10
+        },
+        {
+          "text": "Return to the clearing",
+          "leads_to": 2
+        }
+      ]
     },
     {
       "id": 10,
-      "description": "The crystal door opens, revealing a chamber filled with ancient treasures. Your journey is rewarded.",
-      "ending": true,
-      "characters": []
+      "description": "The old man gets you a drink. You drink it and feel dizzy. You wake up in a dark room. You are tied up and a spectral guardian is standing in front of you.",
+      "choices": [
+        {
+          "text": "Ask where you are",
+          "leads_to": 3
+        },
+        {
+          "text": "Look around the room",
+          "leads_to": 7
+        }
+      ]
     },
     {
       "id": 11,
-      "description": "As you look at the statue, you notice a small chest. Inside the chest, you find an old, iron key.",
+      "description": "You walk into a clearing with many ancient ruins. There is nothing of interest here.",
       "choices": [
         {
-          "text": "Take the key and open the door to the left",
-          "leads_to": 7
-        },
-        {
-          "text": "Take the key and open the door to the right",
-          "leads_to": 8
-        },
-        {
-          "text": "Leave the key and return to the gates",
-          "leads_to": 6
+          "text": "Return to the clearing",
+          "leads_to": 1
         }
-      ],
-      "characters": []
-    },
-    {
-      "id": 12,
-      "description": "The emblem unlocks the iron door, revealing an ancient library filled with forgotten knowledge.",
-      "ending": true,
-      "characters": ["Ancient Librarians"]
-    },
-    {
-      "id": 13,
-      "description": "The jewel reveals the true door through the shadows. Behind it lies the ancient throne, crowned with priceless artifacts.",
-      "ending": true,
-      "characters": []
+      ]
     }
   ]
 }
