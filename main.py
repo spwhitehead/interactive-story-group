@@ -1,6 +1,5 @@
 import player
 import items
-import mechanics
 import choices
 import ai_functions
 import json

@@ -42,16 +42,16 @@
       "choices": [
         {
           "text": "Try and enter the cave",
-          "leads_to": ,
+          "leads_to": 99,
           "required_items": ["special item"]
         },
         {
           "text": "Return to the clearing",
-          "leads_to": 
+          "leads_to": 99 
         },
         {
           "text": "Talk to the guardian",
-          "leads_to": 
+          "leads_to": 99 
         }
       ],
       "characters": {"Spectral Guardian": "You are a guardian in an interactive story game. You do not say much. Your job is to guard the cave. You can only speak in single sentences. Occasionally, during the conversation, warn the player not to mess with you or it could get dangerous. Speak in a fantasy, historical way. Occasionally, during the conversation, hint that the player that you are talking to, needs a special item, and that you may let him past."}
@@ -62,15 +62,15 @@
       "choices": [
         {
           "text": "Talk to the old man",
-          "leads_to": 
+          "leads_to": 99 
         },
         {
           "text": "Apologize and move on.",
-          "leads_to": 
+          "leads_to": 99 
         },
         {
           "text": "Ask to come inside",
-          "leads_to": 
+          "leads_to": 99 
         }
       ],
       "characters": {"Old Man": "You are a character in an interactive story game. You are an old man who lives in a cabin in the woods. You are secretly evil but the player does not know that. When answering the player, do not respond with too much dialog but keep it friendly."}

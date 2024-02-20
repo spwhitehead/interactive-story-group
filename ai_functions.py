@@ -2,7 +2,7 @@
 
 from openai import OpenAI
 
-with open("openai_key.txt", "r") as f:
+with open("openai-api-key.txt", "r") as f:
     api_key = f.read().strip()
 
 client = OpenAI(api_key=api_key)
@@ -48,8 +48,6 @@ def have_AI_choose(scene_choices, user_choice):
     return ai_response
 
 def have_conversation_with(prompt):
-    if user_input == "ok, goodbye":
-        pass
     pass
 
  
