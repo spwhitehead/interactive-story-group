@@ -16,7 +16,7 @@ adventure_data = load_adventure_data('adventure.json')
 def play_scene(scene):
     previous_scene = adventure_data['scenes'][scene['id'] - 1]
     print()
-    print(ai_functions.have_AI_describe(
+    ai_functions.print_typing(ai_functions.have_AI_describe(
         scene['description'], previous_scene['description']))
     if 'ending' in scene and scene['ending']:
         print()
@@ -33,13 +33,6 @@ def play_scene(scene):
         print()
         ai_functions.print_typing(
             f"You picked up {scene['choices'][user_choice]['add_item']}")
-    if user_choice == "x":
-        ai_functions.have_conversation_with(scene['characters'][0])
-        for idx, choice in enumerate(scene['choices'], start=1):
-            print(f"{idx}. {choice['text']}")
-        user_choice = ai_functions.print_typing(input("What do you choose? "))
-        user_choice = int(ai_functions.have_AI_choose(
-            scene['choices'], user_choice)) - 1
     next_scene_id = scene['choices'][user_choice]['leads_to']
     next_scene = next(
         filter(lambda x: x['id'] == next_scene_id, adventure_data['scenes']), None)

@@ -12,7 +12,7 @@ client = OpenAI(api_key=api_key)
 def print_typing(response):
     for char in response:
         print(char, end='', flush=True)
-        time.sleep(0.05)
+        time.sleep(0.01)
     print()
 
 
@@ -40,7 +40,7 @@ def have_AI_describe(basic_scene_description, previous_scene):
 
     # Extracting the text from the response object
     ai_response = response.choices[0].message.content.strip()
-    return print_typing(ai_response)
+    return ai_response
 
 
 def have_AI_choose(scene_choices, user_choice):
@@ -58,10 +58,4 @@ def have_AI_choose(scene_choices, user_choice):
     )
 
     ai_response = response.choices[0].message.content.strip()
-    return print_typing(ai_response)
-
-
-def have_conversation_with(prompt):
-    pass
-
-# changing something.
+    return ai_response
