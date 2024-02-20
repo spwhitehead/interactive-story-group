@@ -69,7 +69,7 @@
         },
         {
           "text": "Ask to come inside",
-          "leads_to": 999,
+          "leads_to": 9,
           "required_items": ["key"]
         }
       ],
