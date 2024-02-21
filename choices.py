@@ -36,7 +36,7 @@ def play_scene(scene):
             print()
             ai_functions.print_typing("You don't have the required items.")
             play_scene(scene)
-    if 'ending' in choice and choice['ending']:
+    if 'ending' in scene['choices'][user_choice]:
         print()
         ai_functions.print_typing("Thank you for playing.")
         return
