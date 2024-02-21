@@ -51,8 +51,7 @@ def have_AI_choose(scene_choices, user_choice):
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": f"You are an assistant for a narrator to an interactive story game. Your job is to take in an answer from the player about what they want to do, compare it to the available options and return a number if the players response is similar to the respective option. The available options for this scene are, {
-                choices}. Each option is numbered. ONLY return the number of the option that the players response is similar to. Do not include any additional text. Just a single number nothing else. Your response will be used in code and needs to be only a single number."},
+            {"role": "system", "content": f"You are an assistant for a narrator to an interactive story game. Your job is to take in an answer from the player about what they want to do, compare it to the available options and return a number if the players response is similar to the respective option. The available options for this scene are, {choices}. Each option is numbered. ONLY return the number of the option that the players response is similar to. Do not include any additional text. Just a single number nothing else. Your response will be used in code and needs to be only a single number."},
             {"role": "user", "content": f"{user_choice}"}
         ]
     )
