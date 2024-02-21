@@ -2,7 +2,7 @@
   "scenes": [
     {
       "id": 1,
-      "description": "At the crossroads of destiny, two paths lie before you: The Enchanted Forest to your left, The Forgotten Ruins to your right.",
+      "description": "You wake up, confused at where you are. At the crossroads of destiny, two paths lie before you: The Enchanted Forest to your left, The Forgotten Ruins to your right.",
       "choices": [
         {
           "text": "Take the path to The Enchanted Forest",
