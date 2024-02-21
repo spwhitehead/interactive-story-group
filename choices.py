@@ -18,10 +18,6 @@ def play_scene(scene):
     print()
     ai_functions.print_typing(ai_functions.have_AI_describe(
         scene['description'], previous_scene['description']))
-    if 'ending' in scene and scene['ending']:
-        print()
-        ai_functions.print_typing("Thank you for playing.")
-        return
     for idx, choice in enumerate(scene['choices'], start=1):
         print(f"{idx}. {choice['text']}")
     print()
@@ -40,6 +36,10 @@ def play_scene(scene):
             print()
             ai_functions.print_typing("You don't have the required items.")
             play_scene(scene)
+    if 'ending' in scene and scene['ending']:
+        print()
+        ai_functions.print_typing("Thank you for playing.")
+        return
     next_scene_id = scene['choices'][user_choice]['leads_to']
     next_scene = next(
         filter(lambda x: x['id'] == next_scene_id, adventure_data['scenes']), None)
