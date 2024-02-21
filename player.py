@@ -14,10 +14,7 @@ class Player():
             print(item)
 
     def check_items(self, item: str):
-        if item in self.items:
-            return True
-        else:
-            return False
+        return item[0] in self.items
 
 
 player1 = Player(name="")
